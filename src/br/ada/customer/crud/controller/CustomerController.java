@@ -1,6 +1,6 @@
-package br.btg.customer.crud.controller;
+package br.ada.customer.crud.controller;
 
-import br.btg.customer.crud.model.Customer;
+import br.ada.customer.crud.model.Customer;
 
 import java.util.Scanner;
 

@@ -1,4 +1,4 @@
-package br.btg.customer.crud.controller;
+package br.ada.customer.crud.controller;
 
 public class CustomerRepositoryException extends Exception{
 }

@@ -1,4 +1,4 @@
-package br.btg.customer.crud.exceptionexample;
+package br.ada.customer.crud.exceptionexample;
 
 public class Carro {
 

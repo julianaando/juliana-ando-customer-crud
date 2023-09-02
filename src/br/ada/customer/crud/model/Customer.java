@@ -1,4 +1,4 @@
-package br.btg.customer.crud.model;
+package br.ada.customer.crud.model;
 
 import java.io.Serializable;
 import java.time.LocalDate;

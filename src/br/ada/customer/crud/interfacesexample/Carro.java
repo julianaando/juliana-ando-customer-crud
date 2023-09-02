@@ -1,4 +1,4 @@
-package br.btg.customer.crud.interfacesexample;
+package br.ada.customer.crud.interfacesexample;
 
 public class Carro implements VeiculoAutomotor {
 

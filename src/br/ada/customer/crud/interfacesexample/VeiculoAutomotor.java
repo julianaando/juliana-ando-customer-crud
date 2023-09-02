@@ -1,4 +1,4 @@
-package br.btg.customer.crud.interfacesexample;
+package br.ada.customer.crud.interfacesexample;
 
 public interface VeiculoAutomotor extends Veiculo {
 

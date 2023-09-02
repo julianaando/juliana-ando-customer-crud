@@ -1,7 +1,7 @@
-package br.btg.customer.crud;
+package br.ada.customer.crud;
 
-import br.btg.customer.crud.controller.CustomerController;
-import br.btg.customer.crud.controller.CustomerFileDatabase;
+import br.ada.customer.crud.controller.CustomerFileDatabase;
+import br.ada.customer.crud.controller.CustomerController;
 
 import java.util.Scanner;
 
