@@ -13,7 +13,7 @@ public class MainException {
     public static void ligar(Carro carro) throws RuntimeException {
         try {
             carro.ligar();
-        } catch (SemBateriaException exception) {
+        } catch (CarroNaoLigaException exception) {
             try {
                 carro.recebeNovaBateria();
             } catch (BateriaIncorretaException exception1) {

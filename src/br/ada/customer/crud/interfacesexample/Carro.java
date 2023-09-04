@@ -1,6 +1,6 @@
 package br.ada.customer.crud.interfacesexample;
 
-public class Carro implements VeiculoAutomotor {
+public class Carro implements VeiculoAutomotor, Movimento {
 
     @Override
     public void ligarMotores() {

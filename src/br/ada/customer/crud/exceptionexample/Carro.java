@@ -11,9 +11,9 @@ public class Carro {
     }
 
     // Exception
-    public void ligar() throws SemBateriaException {
+    public void ligar() throws CarroNaoLigaException {
         if (!bateria) {
-            throw new SemBateriaException();
+            throw new CarroNaoLigaException("Deu ruim!", new SemBateriaException());
         }
         // injetar combustivel
         //  - Falta de combustivel

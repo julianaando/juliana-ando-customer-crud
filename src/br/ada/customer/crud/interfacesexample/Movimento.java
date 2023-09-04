@@ -1,6 +1,7 @@
 package br.ada.customer.crud.interfacesexample;
 
-public interface Veiculo extends Movimento {
+public interface Movimento {
 
+    void deslocar();
 
 }
