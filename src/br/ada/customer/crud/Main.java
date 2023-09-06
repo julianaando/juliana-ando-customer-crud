@@ -1,6 +1,6 @@
 package br.ada.customer.crud;
 
-import br.ada.customer.crud.presentation.MenuPresentation;
+import br.ada.customer.crud.view.MenuPresentation;
 
 public class Main {
 

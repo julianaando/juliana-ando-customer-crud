@@ -1,4 +1,4 @@
-package br.ada.customer.crud.presentation;
+package br.ada.customer.crud.view;
 
 import br.ada.customer.crud.factory.CustomerFactory;
 import br.ada.customer.crud.factory.ProductFactory;

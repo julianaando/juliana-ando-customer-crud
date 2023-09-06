@@ -1,4 +1,4 @@
-package br.ada.customer.crud.presentation;
+package br.ada.customer.crud.view;
 
 import br.ada.customer.crud.model.Product;
 import br.ada.customer.crud.usecases.IProductUseCase;
