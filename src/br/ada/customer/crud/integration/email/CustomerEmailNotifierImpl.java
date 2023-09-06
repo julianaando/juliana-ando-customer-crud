@@ -1,9 +1,9 @@
 package br.ada.customer.crud.integration.email;
 
 import br.ada.customer.crud.model.Customer;
-import br.ada.customer.crud.usecases.INotifier;
+import br.ada.customer.crud.usecases.INotifierUserCase;
 
-public class CustomerEmailNotifierImpl implements INotifier<Customer> {
+public class CustomerEmailNotifierImpl implements INotifierUserCase<Customer> {
 
     private SendEmail sendEmail;
 

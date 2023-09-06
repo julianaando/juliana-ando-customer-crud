@@ -2,7 +2,7 @@ package br.ada.customer.crud.usecases.impl;
 
 import br.ada.customer.crud.model.Customer;
 import br.ada.customer.crud.usecases.ICustomerUseCase;
-import br.ada.customer.crud.usecases.INotifier;
+import br.ada.customer.crud.usecases.INotifierUserCase;
 import br.ada.customer.crud.usecases.repository.CustomerRepository;
 
 import java.util.ArrayList;
@@ -11,9 +11,9 @@ import java.util.List;
 public class CustomerUseCaseImpl implements ICustomerUseCase {
 
     private CustomerRepository repository;
-    private INotifier<Customer> notifier;
+    private INotifierUserCase<Customer> notifier;
 
-    public CustomerUseCaseImpl(CustomerRepository repository, INotifier<Customer> notifier) {
+    public CustomerUseCaseImpl(CustomerRepository repository, INotifierUserCase<Customer> notifier) {
         this.repository = repository;
         this.notifier = notifier;
     }

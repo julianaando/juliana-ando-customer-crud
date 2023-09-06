@@ -6,12 +6,12 @@ import br.ada.customer.crud.usecases.IProductUseCase;
 import java.util.List;
 import java.util.Scanner;
 
-public class ProductPresentation {
+public class ProductView {
 
     private Scanner scanner = new Scanner(System.in);
     private IProductUseCase useCase;
 
-    public ProductPresentation(IProductUseCase useCase) {
+    public ProductView(IProductUseCase useCase) {
         this.useCase = useCase;
     }
 

@@ -9,13 +9,13 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.Scanner;
 
-public class CustomerPresentation {
+public class CustomerView {
 
     private Scanner scanner = new Scanner(System.in);
     private String datePattern = "dd/MM/yyyy";
     private ICustomerUseCase useCase;
 
-    public CustomerPresentation(ICustomerUseCase customerUseCase) {
+    public CustomerView(ICustomerUseCase customerUseCase) {
         this.useCase = customerUseCase;
     }
 

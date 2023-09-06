@@ -1,11 +1,11 @@
 package br.ada.customer.crud;
 
-import br.ada.customer.crud.view.MenuPresentation;
+import br.ada.customer.crud.view.MenuView;
 
 public class Main {
 
     public static void main(String[] args) {
-        MenuPresentation presentation = new MenuPresentation();
+        MenuView presentation = new MenuView();
         presentation.show();
     }
 

@@ -5,7 +5,7 @@ import br.ada.customer.crud.factory.ProductFactory;
 
 import java.util.Scanner;
 
-public class MenuPresentation {
+public class MenuView {
 
     private Scanner scanner = new Scanner(System.in);
 
@@ -31,14 +31,14 @@ public class MenuPresentation {
     }
 
     public void customer() {
-        CustomerPresentation presentation = new CustomerPresentation(
+        CustomerView presentation = new CustomerView(
                 CustomerFactory.createUseCase()
         );
         presentation.showMenu();
     }
 
     public void product() {
-        ProductPresentation presentation = new ProductPresentation(
+        ProductView presentation = new ProductView(
                 ProductFactory.createUseCase()
         );
         presentation.showMenu();
