@@ -2,14 +2,15 @@ package br.ada.customer.crud.model;
 
 import java.io.Serializable;
 import java.time.LocalDate;
+import java.util.List;
 
 public class Customer implements Serializable {
 
     private Long id;
     private String name;
     private String document;
-    private String email;
-    private String telephone;
+    private List<String> email;
+    private List<String> telephone;
     private LocalDate birthDate;
 
     public Long getId() {
@@ -36,19 +37,19 @@ public class Customer implements Serializable {
         this.document = document;
     }
 
-    public String getEmail() {
+    public List<String> getEmail() {
         return email;
     }
 
-    public void setEmail(String email) {
+    public void setEmail(List<String> email) {
         this.email = email;
     }
 
-    public String getTelephone() {
+    public List<String> getTelephone() {
         return telephone;
     }
 
-    public void setTelephone(String telephone) {
+    public void setTelephone(List<String> telephone) {
         this.telephone = telephone;
     }
 
