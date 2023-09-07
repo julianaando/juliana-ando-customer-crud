@@ -33,7 +33,7 @@ public interface IOrderUseCase {
      * 1 - Pedido precisa estar com status == OrderStatus.OPEN
      * 2 - Lembrar de atualizar o banco através do repository
      */
-    void removeItem(Order order, OrderItem item);
+    void removeItem(Order order, Product product);
 
     /*
      * 1 - Pedido precisa estar com status == OrderStatus.OPEN
