@@ -2,12 +2,15 @@ package br.ada.customer.crud.model;
 
 import java.math.BigDecimal;
 
+/**
+ * Representação de um item do pedido
+ */
 public class OrderItem {
 
     private Long id;
     private Product product;
-    private BigDecimal amount;
     private BigDecimal saleValue;
+    private Integer amount;
 
     public Long getId() {
         return id;
@@ -25,19 +28,19 @@ public class OrderItem {
         this.product = product;
     }
 
-    public BigDecimal getAmount() {
-        return amount;
-    }
-
-    public void setAmount(BigDecimal amount) {
-        this.amount = amount;
-    }
-
     public BigDecimal getSaleValue() {
         return saleValue;
     }
 
     public void setSaleValue(BigDecimal saleValue) {
         this.saleValue = saleValue;
+    }
+
+    public Integer getAmount() {
+        return amount;
+    }
+
+    public void setAmount(Integer amount) {
+        this.amount = amount;
     }
 }

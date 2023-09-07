@@ -9,6 +9,8 @@ public class Order {
     private Customer customer;
     private List<OrderItem> items;
     private LocalDateTime orderedAt;
+    private OrderStatus status;
+    private String shippingAddress;
 
     public Long getId() {
         return id;
@@ -42,4 +44,19 @@ public class Order {
         this.orderedAt = orderedAt;
     }
 
+    public OrderStatus getStatus() {
+        return status;
+    }
+
+    public void setStatus(OrderStatus status) {
+        this.status = status;
+    }
+
+    public String getShippingAddress() {
+        return shippingAddress;
+    }
+
+    public void setShippingAddress(String shippingAddress) {
+        this.shippingAddress = shippingAddress;
+    }
 }

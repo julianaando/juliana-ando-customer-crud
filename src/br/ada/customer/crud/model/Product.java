@@ -1,12 +1,14 @@
 package br.ada.customer.crud.model;
 
 import java.io.Serializable;
+import java.math.BigDecimal;
 
 public class Product implements Serializable {
 
     private Long id;
     private String description;
     private String barcode;
+    private BigDecimal value;
 
     public Long getId() {
         return id;
@@ -30,5 +32,13 @@ public class Product implements Serializable {
 
     public void setBarcode(String barcode) {
         this.barcode = barcode;
+    }
+
+    public BigDecimal getValue() {
+        return value;
+    }
+
+    public void setValue(BigDecimal value) {
+        this.value = value;
     }
 }
