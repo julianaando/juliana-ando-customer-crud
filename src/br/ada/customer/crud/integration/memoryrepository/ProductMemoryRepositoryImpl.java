@@ -18,7 +18,7 @@ public class ProductMemoryRepositoryImpl implements ProductRepository {
 
     @Override
     public void save(Product product) throws RepositoryException {
-        product.setId(System.currentTimeMillis());
+        product.setId(database.nextId());
         database.saveOrUpdate(product);
     }
 
@@ -37,7 +37,11 @@ public class ProductMemoryRepositoryImpl implements ProductRepository {
 
     @Override
     public void update(Product product) throws RepositoryException {
-        database.saveOrUpdate(product);
+        Product inserted = findById(product.getId());
+        inserted.setDescription(product.getDescription());
+        inserted.setBarcode(product.getBarcode());
+        inserted.setPrice(product.getPrice());
+        database.saveOrUpdate(inserted);
     }
 
     @Override

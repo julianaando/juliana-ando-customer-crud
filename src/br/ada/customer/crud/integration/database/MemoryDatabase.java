@@ -1,16 +1,14 @@
 package br.ada.customer.crud.integration.database;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 import java.util.function.Predicate;
 import java.util.stream.Collectors;
 
 public class MemoryDatabase {
 
     private static final MemoryDatabase INSTANCE = new MemoryDatabase();
-    private final Map<String, List> database = new HashMap<>();
+    private final Map<String, Set> database = new HashMap<>();
+    private Long sequence = 100l;
 
     private MemoryDatabase() {
     }
@@ -21,7 +19,7 @@ public class MemoryDatabase {
 
     public <T> T saveOrUpdate(T object) {
         String key = makeKey(object);
-        List<T> objects = database.getOrDefault(key, new ArrayList<>());
+        Set<T> objects = database.getOrDefault(key, new TreeSet());
         objects.add(object);
         database.put(key, objects);
         return object;
@@ -29,12 +27,12 @@ public class MemoryDatabase {
 
     public <T> List<T> listAll(Class<T> clazz) {
         String key = makeKey(clazz);
-        return database.get(key);
+        return new ArrayList<>(database.getOrDefault(key, new HashSet<>()));
     }
 
     public <T> List<T> find(Class<T> clazz, Predicate<T> predicate) {
         String key = makeKey(clazz);
-        List<T> objects = database.getOrDefault(key, new ArrayList<>());
+        Set<T> objects = database.getOrDefault(key, new TreeSet());
         List<T> found = objects.stream().filter(predicate)
                 .collect(Collectors.toList());
         return found;
@@ -42,9 +40,13 @@ public class MemoryDatabase {
 
     public <T> T delete(T object) {
         String key = makeKey(object);
-        List<T> objects = database.getOrDefault(key, new ArrayList<>());
+        Set<T> objects = database.getOrDefault(key, new TreeSet());
         objects.remove(object);
         return object;
+    }
+
+    public Long nextId() {
+        return ++sequence;
     }
 
     private String makeKey(Object object) {

@@ -5,6 +5,7 @@ import br.ada.customer.crud.model.Customer;
 import br.ada.customer.crud.usecases.repository.CustomerRepository;
 import br.ada.customer.crud.usecases.repository.RepositoryException;
 
+import java.awt.im.InputSubset;
 import java.util.List;
 import java.util.Objects;
 
@@ -18,7 +19,7 @@ public class CustomerMemoryRepositoryImpl implements CustomerRepository {
 
     @Override
     public void save(Customer customer) throws RepositoryException {
-        customer.setId(System.currentTimeMillis());
+        customer.setId(database.nextId());
         database.saveOrUpdate(customer);
     }
 
@@ -38,7 +39,13 @@ public class CustomerMemoryRepositoryImpl implements CustomerRepository {
 
     @Override
     public void update(Customer customer) throws RepositoryException {
-        database.saveOrUpdate(customer);
+        Customer inserted = findById(customer.getId());
+        inserted.setName(customer.getName());
+        inserted.setDocument(customer.getDocument());
+        inserted.setEmail(customer.getEmail());
+        inserted.setTelephone(customer.getTelephone());
+        inserted.setDocument(customer.getDocument());
+        database.saveOrUpdate(inserted);
     }
 
     @Override

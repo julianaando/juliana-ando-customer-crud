@@ -8,7 +8,7 @@ public class Product implements Serializable {
     private Long id;
     private String description;
     private String barcode;
-    private BigDecimal value;
+    private BigDecimal price;
 
     public Long getId() {
         return id;
@@ -34,11 +34,11 @@ public class Product implements Serializable {
         this.barcode = barcode;
     }
 
-    public BigDecimal getValue() {
-        return value;
+    public BigDecimal getPrice() {
+        return price;
     }
 
-    public void setValue(BigDecimal value) {
-        this.value = value;
+    public void setPrice(BigDecimal price) {
+        this.price = price;
     }
 }

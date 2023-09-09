@@ -22,7 +22,7 @@ public class OrderMemoryRepositoryImpl implements OrderRepository {
 
     @Override
     public void save(Order order) throws RepositoryException {
-        order.setId(System.currentTimeMillis());
+        order.setId(database.nextId());
         entityMerge.merge(order);
         for (OrderItem item : order.getItems()) {
             entityMerge.merge(item);
@@ -49,7 +49,12 @@ public class OrderMemoryRepositoryImpl implements OrderRepository {
         for (OrderItem item : order.getItems()) {
             entityMerge.merge(item);
         }
-        database.saveOrUpdate(order);
+        Order inserted = findById(order.getId());
+        inserted.setCustomer(order.getCustomer());
+        inserted.setStatus(order.getStatus());
+        inserted.setShippingAddress(order.getShippingAddress());
+        inserted.setItems(order.getItems());
+        database.saveOrUpdate(inserted);
     }
 
     @Override

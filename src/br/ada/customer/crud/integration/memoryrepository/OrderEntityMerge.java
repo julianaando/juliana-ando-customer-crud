@@ -24,7 +24,7 @@ public class OrderEntityMerge {
     private Customer findCustomer(Long id) {
         Customer found = database.find(
                 Customer.class,
-                it -> Objects.equals(it, it.getId())
+                it -> Objects.equals(id, it.getId())
         ).stream().findFirst().orElse(null);
         return found;
     }

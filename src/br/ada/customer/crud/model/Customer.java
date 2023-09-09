@@ -4,7 +4,7 @@ import java.io.Serializable;
 import java.time.LocalDate;
 import java.util.List;
 
-public class Customer implements Serializable {
+public class Customer implements Serializable, Comparable<Customer> {
 
     private Long id;
     private String name;
@@ -59,6 +59,11 @@ public class Customer implements Serializable {
 
     public void setBirthDate(LocalDate birthDate) {
         this.birthDate = birthDate;
+    }
+
+    @Override
+    public int compareTo(Customer other) {
+        return this.id.compareTo(other.id);
     }
 
 }
