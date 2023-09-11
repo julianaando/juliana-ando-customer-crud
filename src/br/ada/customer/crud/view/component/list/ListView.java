@@ -17,7 +17,7 @@ public class ListView<T> implements View {
     @Override
     public void render() {
         for (T register : registers) {
-            System.out.println("- ");
+            System.out.print("- ");
             for (View line : modelView.convert(register)) {
                 line.render();
                 System.out.print(" | ");

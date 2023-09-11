@@ -22,7 +22,7 @@ public class CustomerTableView extends AbstractMenuOptionView implements MenuOpt
 
     @Override
     public void render() {
-        System.out.println(MENU_CODE + " - Lisar");
+        System.out.println(MENU_CODE + " - Listar");
     }
 
 
@@ -35,4 +35,5 @@ public class CustomerTableView extends AbstractMenuOptionView implements MenuOpt
         );
         tableView.render();
     }
+
 }

@@ -6,7 +6,7 @@ import br.ada.customer.crud.view.component.list.ListView;
 import br.ada.customer.crud.view.component.menu.AbstractMenuOptionView;
 import br.ada.customer.crud.view.component.menu.MenuOptionView;
 import br.ada.customer.crud.view.component.text.impl.TextInputView;
-import br.ada.customer.crud.view.customer.modelview.CustomerTableModelView;
+import br.ada.customer.crud.view.customer.modelview.CustomerListModelView;
 
 import java.util.List;
 
@@ -32,7 +32,7 @@ public class CustomerFindByDocumentView extends AbstractMenuOptionView implement
         txtDocument.render();
 
         Customer customer = customerUseCase.findByDocument(txtDocument.value());
-        ListView<Customer> listView = new ListView<>(List.of(customer), new CustomerTableModelView());
+        ListView<Customer> listView = new ListView<>(List.of(customer), new CustomerListModelView());
         listView.render();
     }
 

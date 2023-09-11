@@ -10,6 +10,7 @@ import br.ada.customer.crud.view.component.menu.AbstractMenuOptionView;
 import br.ada.customer.crud.view.component.menu.MenuOptionView;
 import br.ada.customer.crud.view.component.text.impl.ObjectInputView;
 import br.ada.customer.crud.view.customer.modelview.CustomerFormModelView;
+import br.ada.customer.crud.view.customer.modelview.CustomerListModelView;
 import br.ada.customer.crud.view.customer.modelview.CustomerTableModelView;
 
 public class CustomerUpdateView extends AbstractMenuOptionView implements MenuOptionView, IFormAction<Customer> {
@@ -35,7 +36,7 @@ public class CustomerUpdateView extends AbstractMenuOptionView implements MenuOp
 
     @Override
     public void selected() {
-        ListView<Customer> listView = new ListView<>(useCase.list(), new CustomerTableModelView());
+        ListView<Customer> listView = new ListView<>(useCase.list(), new CustomerListModelView());
         listView.render();
 
         ObjectInputView<Long> txtId = new ObjectInputView<>("Informe o id do cliente: ", new LongTextConverter());

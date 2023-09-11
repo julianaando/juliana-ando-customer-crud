@@ -2,12 +2,11 @@ package br.ada.customer.crud.view.customer.modelview;
 
 import br.ada.customer.crud.model.Customer;
 import br.ada.customer.crud.view.component.convert.impl.DateTextConverter;
-import br.ada.customer.crud.view.component.list.IListModelView;
 import br.ada.customer.crud.view.component.table.ITableModelView;
 import br.ada.customer.crud.view.component.text.impl.FormattedTextView;
 import br.ada.customer.crud.view.component.text.impl.SimpleTextView;
 
-public class CustomerTableModelView implements ITableModelView<Customer>, IListModelView<Customer> {
+public class CustomerTableModelView implements ITableModelView<Customer> {
 
     @Override
     public SimpleTextView[] headers() {

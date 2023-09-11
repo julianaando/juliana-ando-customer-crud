@@ -6,6 +6,7 @@ import br.ada.customer.crud.view.component.View;
 import br.ada.customer.crud.view.component.menu.impl.ExitOptionView;
 import br.ada.customer.crud.view.component.menu.impl.SubMenuView;
 import br.ada.customer.crud.view.customer.CustomerMenuView;
+import br.ada.customer.crud.view.order.OrderMenuView;
 import br.ada.customer.crud.view.product.ProductMenuView;
 
 import java.util.Arrays;
@@ -23,7 +24,7 @@ public class MainMenu implements View {
                         ProductFactory.createUseCase(),
                         this
                 ),
-//                new OrderMenuView(),
+                new OrderMenuView(this),
                 new ExitOptionView()
         ));
         subMenuView.render();

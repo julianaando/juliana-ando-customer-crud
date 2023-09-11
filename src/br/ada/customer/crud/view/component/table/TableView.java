@@ -21,13 +21,14 @@ public class TableView<T> implements View {
             header.render();
             System.out.print(" | ");
         }
+        System.out.println();
         for (T register : registers) {
-            System.out.println("| ");
+            System.out.print("| ");
             for (View line : modelView.convert(register)) {
                 line.render();
                 System.out.print(" | ");
             }
-            System.out.println(" |");
+            System.out.println();
         }
         System.out.println();
     }
