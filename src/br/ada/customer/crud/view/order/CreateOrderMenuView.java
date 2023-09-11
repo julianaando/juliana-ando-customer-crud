@@ -1,4 +1,4 @@
-package br.ada.customer.crud.view.menu;
+package br.ada.customer.crud.view.order;
 
 import br.ada.customer.crud.view.component.menu.AbstractMenuOptionView;
 import br.ada.customer.crud.view.component.menu.MenuOptionView;

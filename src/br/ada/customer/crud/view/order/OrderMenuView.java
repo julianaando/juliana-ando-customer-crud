@@ -5,7 +5,6 @@ import br.ada.customer.crud.view.component.menu.AbstractMenuOptionView;
 import br.ada.customer.crud.view.component.menu.MenuOptionView;
 import br.ada.customer.crud.view.component.menu.impl.GoBackOptionView;
 import br.ada.customer.crud.view.component.menu.impl.SubMenuView;
-import br.ada.customer.crud.view.menu.CreateOrderMenuView;
 
 import java.util.Arrays;
 
@@ -31,6 +30,7 @@ public class OrderMenuView extends AbstractMenuOptionView implements MenuOptionV
         SubMenuView subMenuView = new SubMenuView(
                 Arrays.asList(
                         new CreateOrderMenuView(),
+                        new AddItemMenuView(),
                         new GoBackOptionView(comeFrom)
                 )
         );
