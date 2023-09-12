@@ -3,16 +3,6 @@ package br.ada.customer.crud.examples.interfaces;
 public class Aviao implements Voavel, VeiculoAutomotor {
 
     @Override
-    public void ligarMotores() {
-
-    }
-
-    @Override
-    public void desligarMotores() {
-
-    }
-
-    @Override
     public void deslocar() {
 
     }
