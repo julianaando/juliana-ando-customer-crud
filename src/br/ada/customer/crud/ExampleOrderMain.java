@@ -6,9 +6,7 @@ import br.ada.customer.crud.factory.ProductFactory;
 import br.ada.customer.crud.model.Customer;
 import br.ada.customer.crud.model.Order;
 import br.ada.customer.crud.model.Product;
-import br.ada.customer.crud.usecases.ICustomerUseCase;
-import br.ada.customer.crud.usecases.IOrderUseCase;
-import br.ada.customer.crud.usecases.IProductUseCase;
+import br.ada.customer.crud.usecases.*;
 
 import java.math.BigDecimal;
 
@@ -17,7 +15,11 @@ public class ExampleOrderMain {
     public static void main(String[] args) {
         IProductUseCase productUseCase = ProductFactory.createUseCase();
         ICustomerUseCase customerUseCase = CustomerFactory.createUseCase();
-        IOrderUseCase orderUseCase = OrderFactory.createUseCase();
+        ICreateOrderUseCase orderUseCase = OrderFactory.createUseCase();
+        IOrderItemUseCase orderItemUseCase = OrderFactory.orderItemUseCase();
+        IOrderPlaceUseCase orderPlaceUseCase = OrderFactory.placeOrderUseCase();
+        IOrderPayUseCase orderPayUseCase = OrderFactory.payOrderUseCase();
+        IOrderShippingUseCase orderShipping = OrderFactory.shippingUseCase();
 
         Customer customer = new Customer();
         customer.setName("William");
@@ -36,13 +38,13 @@ public class ExampleOrderMain {
         productUseCase.create(productThree);
 
         Order order = orderUseCase.create(customer);
-        orderUseCase.addItem(order, productOne, BigDecimal.TEN, 1);
-        orderUseCase.addItem(order, productTwo, BigDecimal.TEN, 2);
-        orderUseCase.changeAmount(order, productTwo, 5);
-        orderUseCase.removeItem(order, productOne);
-        orderUseCase.placeOrder(order);
-        orderUseCase.pay(order);
-        orderUseCase.shipping(order);
+        orderItemUseCase.addItem(order, productOne, BigDecimal.TEN, 1);
+        orderItemUseCase.addItem(order, productTwo, BigDecimal.TEN, 2);
+        orderItemUseCase.changeAmount(order, productTwo, 5);
+        orderItemUseCase.removeItem(order, productOne);
+        orderPlaceUseCase.placeOrder(order);
+        orderPayUseCase.pay(order);
+        orderShipping.shipping(order);
     }
 
 }
