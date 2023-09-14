@@ -2,7 +2,7 @@ package br.ada.customer.crud.usecases;
 
 import br.ada.customer.crud.model.Order;
 
-public interface IOrderPlaceUseCase {
+public interface IPlaceOrderUseCase {
 
     /*
      * 1 - Pedido precisa estar com status == OrderStatus.OPEN

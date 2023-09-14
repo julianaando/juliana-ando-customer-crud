@@ -9,7 +9,7 @@ import java.util.List;
 
 public class ProductUseCaseImpl implements IProductUseCase {
 
-    private ProductRepository repository;
+    private final ProductRepository repository;
 
     public ProductUseCaseImpl(ProductRepository repository) {
         this.repository = repository;

@@ -3,35 +3,29 @@ package br.ada.customer.crud.usecases.impl;
 import br.ada.customer.crud.model.Order;
 import br.ada.customer.crud.model.OrderStatus;
 import br.ada.customer.crud.usecases.INotifierOrderUseCase;
-import br.ada.customer.crud.usecases.IShippingOrderUseCase;
+import br.ada.customer.crud.usecases.IPayOrderUseCase;
 import br.ada.customer.crud.usecases.repository.OrderRepository;
 
-public class OrderShippingUseCaseImpl implements IShippingOrderUseCase {
+public class PayOrderUseCaseImpl implements IPayOrderUseCase {
 
     private final OrderRepository repository;
     private final INotifierOrderUseCase emailNotifier;
     private final INotifierOrderUseCase smsNotifier;
+
     private ValidationStatusOrderImpl statusOrder;
 
-
-
-    public OrderShippingUseCaseImpl(
-            OrderRepository repository,
-            INotifierOrderUseCase emailNotifier,
-            INotifierOrderUseCase smsNotifier
-    ) {
+    public PayOrderUseCaseImpl(OrderRepository repository, INotifierOrderUseCase emailNotifier, INotifierOrderUseCase smsNotifier) {
         this.repository = repository;
         this.emailNotifier = emailNotifier;
         this.smsNotifier = smsNotifier;
     }
 
     @Override
-    public void shipping(Order order) {
-        statusOrder.validateStatus(order, OrderStatus.PAID);
-        order.setStatus(OrderStatus.FINISH);
+    public void pay(Order order) {
+        statusOrder.validateStatus(order, OrderStatus.PENDING_PAYMENT);
+        order.setStatus(OrderStatus.PAID);
         repository.save(order);
-        emailNotifier.shipped(order);
-        smsNotifier.shipped(order);
+        emailNotifier.updatePayment(order);
+        smsNotifier.updatePayment(order);
     }
-
 }

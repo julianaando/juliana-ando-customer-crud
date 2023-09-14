@@ -1,6 +1,6 @@
 package br.ada.customer.crud.usecases;
 
-public interface INotifierUserCase<T> {
+public interface INotifierUseCase<T> {
 
     void registered(T object);
 

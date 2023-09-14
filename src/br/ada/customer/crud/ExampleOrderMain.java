@@ -17,9 +17,9 @@ public class ExampleOrderMain {
         ICustomerUseCase customerUseCase = CustomerFactory.createUseCase();
         ICreateOrderUseCase orderUseCase = OrderFactory.createUseCase();
         IOrderItemUseCase orderItemUseCase = OrderFactory.orderItemUseCase();
-        IOrderPlaceUseCase orderPlaceUseCase = OrderFactory.placeOrderUseCase();
-        IOrderPayUseCase orderPayUseCase = OrderFactory.payOrderUseCase();
-        IOrderShippingUseCase orderShipping = OrderFactory.shippingUseCase();
+        IPlaceOrderUseCase orderPlaceUseCase = OrderFactory.placeOrderUseCase();
+        IPayOrderUseCase orderPayUseCase = OrderFactory.payOrderUseCase();
+        IShippingOrderUseCase orderShipping = OrderFactory.shippingUseCase();
 
         Customer customer = new Customer();
         customer.setName("William");
