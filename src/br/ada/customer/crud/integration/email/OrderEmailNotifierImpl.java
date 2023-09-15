@@ -20,4 +20,9 @@ public class OrderEmailNotifierImpl implements INotifierOrderUseCase {
     public void updatePayment(Order order) {
         sendEmail.send("financeiro@juliana.com", order.getCustomer().getEmail(), "Seu pagamento foi aprovado e o pedido já está sendo preparado para envio.");
     }
+
+    @Override
+    public void pendingPayment(Order order) {
+        sendEmail.send("financeiro@juliana.com", order.getCustomer().getEmail(), "Seu pagamento está pendente. Realize uma nova tentativa para concluir sua compra.");
+    }
 }

@@ -8,4 +8,6 @@ public interface INotifierOrderUseCase {
 
     void updatePayment(Order order);
 
+    void pendingPayment(Order order);
+
 }

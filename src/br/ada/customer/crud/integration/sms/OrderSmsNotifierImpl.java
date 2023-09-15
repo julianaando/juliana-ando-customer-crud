@@ -20,4 +20,9 @@ public class OrderSmsNotifierImpl implements INotifierOrderUseCase {
         sendSms.send("40028922", order.getCustomer().getTelephone(), "Seu pagamento foi aprovado e o pedido já está sendo preparado para envio.");
     }
 
+    @Override
+    public void pendingPayment(Order order) {
+        sendSms.send("40028922", order.getCustomer().getTelephone(), "Seu pagamento está pendente. Realize uma nova tentativa para concluir sua compra.");
+    }
+
 }

@@ -10,6 +10,8 @@ import br.ada.customer.crud.usecases.*;
 import br.ada.customer.crud.usecases.impl.*;
 import br.ada.customer.crud.usecases.repository.OrderRepository;
 import br.ada.customer.crud.integration.email.SendEmail;
+import br.ada.customer.crud.usecases.impl.ValidationStatusOrderImpl;
+import br.ada.customer.crud.usecases.impl.ValidationPlaceOrderImpl;
 
 public class OrderFactory {
 
@@ -28,8 +30,11 @@ public class OrderFactory {
 
     public static IPlaceOrderUseCase placeOrderUseCase() {
         return new PlaceOrderUseCaseImpl(
-                createRepository()
-        );
+                createRepository(),
+                new ValidationStatusOrderImpl(),
+                new ValidationPlaceOrderImpl(),
+                new OrderEmailNotifierImpl(new SendEmail()),
+                new OrderSmsNotifierImpl(new SendSms()));
     }
 
     public static IPayOrderUseCase payOrderUseCase() {
