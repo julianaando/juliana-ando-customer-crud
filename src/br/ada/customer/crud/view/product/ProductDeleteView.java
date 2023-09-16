@@ -15,7 +15,7 @@ public class ProductDeleteView extends AbstractMenuOptionView implements MenuOpt
 
     public static final String MENU_CODE = "6";
     public static final Integer MENU_ORDER = 6;
-    private IProductUseCase useCase;
+    private final IProductUseCase useCase;
 
     public ProductDeleteView(IProductUseCase useCase) {
         super(MENU_CODE, MENU_ORDER);

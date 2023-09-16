@@ -13,7 +13,7 @@ public class OrderMenuView extends AbstractMenuOptionView implements MenuOptionV
     public static final String MENU_CODE = "3";
     public static final Integer MENU_ORDER = 3;
 
-    private View comeFrom;
+    private final View comeFrom;
 
     public OrderMenuView(View comeFrom) {
         super(MENU_CODE, MENU_ORDER);
@@ -31,6 +31,11 @@ public class OrderMenuView extends AbstractMenuOptionView implements MenuOptionV
                 Arrays.asList(
                         new CreateOrderMenuView(),
                         new AddItemMenuView(),
+                        new ChangeItemMenuView(),
+                        new RemoveItemMenuView(),
+                        new PayOrderMenuView(),
+                        new PlaceOrderMenuView(),
+                        new ShippingOrderMenuView(),
                         new GoBackOptionView(comeFrom)
                 )
         );

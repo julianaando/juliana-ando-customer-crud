@@ -12,7 +12,7 @@ public class ProductCreateView extends AbstractMenuOptionView implements MenuOpt
 
     public static final String MENU_CODE = "1";
     public static final Integer MENU_ORDER = 1;
-    private IProductUseCase useCase;
+    private final IProductUseCase useCase;
 
     public ProductCreateView(IProductUseCase useCase) {
         super(MENU_CODE, MENU_ORDER);

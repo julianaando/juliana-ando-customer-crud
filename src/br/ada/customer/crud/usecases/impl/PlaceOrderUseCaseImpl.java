@@ -30,6 +30,7 @@ public class PlaceOrderUseCaseImpl implements IPlaceOrderUseCase {
 
     @Override
     public void placeOrder(Order order) {
+        placeOrder.validateHasItem(order);
         statusOrder.validateStatus(order, OrderStatus.OPEN);
         placeOrder.validateCart(order);
         placeOrder.validateTotal(order);

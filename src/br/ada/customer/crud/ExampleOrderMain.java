@@ -9,6 +9,8 @@ import br.ada.customer.crud.model.Product;
 import br.ada.customer.crud.usecases.*;
 
 import java.math.BigDecimal;
+import java.time.LocalDate;
+import java.util.Collections;
 
 public class ExampleOrderMain {
 
@@ -24,20 +26,20 @@ public class ExampleOrderMain {
         IShippingOrderUseCase orderShipping = OrderFactory.shippingUseCase();
 
         Customer customer = new Customer();
-        customer.setName("William");
+        customer.setName("Juliana");
+        customer.setDocument("12345678901");
+        customer.setTelephone(Collections.singletonList("40028922"));
+        customer.setEmail(Collections.singletonList("juandocezare@gmail.com"));
+        customer.setBirthDate(LocalDate.ofEpochDay(8/29/1996));
         customerUseCase.create(customer);
 
         Product productOne = new Product();
-        productOne.setDescription("023");
+        productOne.setDescription("Coca-cola");
         productUseCase.create(productOne);
 
         Product productTwo = new Product();
-        productTwo.setDescription("1546");
+        productTwo.setDescription("Pizza");
         productUseCase.create(productTwo);
-
-        Product productThree = new Product();
-        productThree.setDescription("516");
-        productUseCase.create(productThree);
 
         Order order = orderUseCase.create(customer);
         orderAddItemUseCase.addItem(order, productOne, BigDecimal.TEN, 1);

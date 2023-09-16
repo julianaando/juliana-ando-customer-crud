@@ -30,14 +30,14 @@ public class OrderFactory {
 
     public static IOrderChangeItemUseCase orderChangeItemUseCase() {
         return new OrderChangeItemUseCaseImpl(
-                createRepository()
-        );
+                createRepository(),
+                new ValidationStatusOrderImpl());
     }
 
     public static IOrderRemoveItemUseCase orderRemoveItemUseCase() {
         return new OrderRemoveItemUseCaseImpl(
-                createRepository()
-        );
+                createRepository(),
+                new ValidationStatusOrderImpl());
     }
 
     public static IPlaceOrderUseCase placeOrderUseCase() {
@@ -53,17 +53,16 @@ public class OrderFactory {
         return new PayOrderUseCaseImpl(
                 createRepository(),
                 new OrderEmailNotifierImpl(new SendEmail()),
-                new OrderSmsNotifierImpl(new SendSms())
-
-        );
+                new OrderSmsNotifierImpl(new SendSms()),
+                new ValidationStatusOrderImpl());
     }
 
     public static IShippingOrderUseCase shippingUseCase() {
         return new OrderShippingUseCaseImpl(
                 createRepository(),
                 new OrderEmailNotifierImpl(new SendEmail()),
-                new OrderSmsNotifierImpl(new SendSms())
-        );
+                new OrderSmsNotifierImpl(new SendSms()),
+                new ValidationStatusOrderImpl());
     }
 
     public static OrderRepository createRepository() {

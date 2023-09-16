@@ -22,6 +22,7 @@ public class ValidationPlaceOrderImpl implements IValidationPlaceOrder, ICalcula
         }
     }
 
+    @Override
     public BigDecimal calculateTotalOrder(Order order) {
         BigDecimal totalOrder = BigDecimal.ZERO;
 
@@ -30,5 +31,12 @@ public class ValidationPlaceOrderImpl implements IValidationPlaceOrder, ICalcula
         }
 
         return totalOrder;
+    }
+
+    @Override
+    public void validateHasItem(Order order) {
+        if (order.getItems().isEmpty()) {
+            throw new IllegalStateException("Adicione itens ao carrinho para concluir a compra!");
+        }
     }
 }

@@ -10,7 +10,14 @@ public class ValidationStatusOrderImpl implements IValidationStatusOrder {
         OrderStatus currentStatus = order.getStatus();
 
         if (order.getStatus() != currentStatus) {
-            throw new IllegalStateException("Pedido inválido! Consulte o pagamento e tente novamente");
+            throw new IllegalStateException("O status " + currentStatus + " do pedido não permite essa operação!");
+        }
+    }
+
+    @Override
+    public void validatePayment(Order order) {
+        if (order.getStatus() != OrderStatus.PENDING_PAYMENT) {
+            throw new IllegalStateException("Efetue o pagamento do pedido para concluir a compra!");
         }
     }
 }

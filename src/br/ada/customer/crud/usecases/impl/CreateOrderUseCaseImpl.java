@@ -23,13 +23,18 @@ public class CreateOrderUseCaseImpl implements ICreateOrderUseCase {
     @Override
     public Order create(Customer customer) {
         validCustomer(customer);
+        Order newOrder = createNewOrder(customer);
+        repository.save(newOrder);
+        return newOrder;
+    }
+
+    private Order createNewOrder(Customer customer) {
         Order order = new Order();
         order.setCustomer(customer);
         order.setItems(new ArrayList<>());
         order.setStatus(OrderStatus.OPEN);
         order.setShippingAddress("Minha casa sempre");
         order.setOrderedAt(LocalDateTime.now());
-        repository.save(order);
         return order;
     }
 

@@ -8,7 +8,7 @@ public class MemoryDatabase {
 
     private static final MemoryDatabase INSTANCE = new MemoryDatabase();
     private final Map<String, Set> database = new HashMap<>();
-    private Long sequence = 100l;
+    private Long sequence = 100L;
 
     private MemoryDatabase() {
     }
