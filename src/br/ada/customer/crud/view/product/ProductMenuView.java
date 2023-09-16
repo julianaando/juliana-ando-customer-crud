@@ -14,8 +14,8 @@ public class ProductMenuView extends AbstractMenuOptionView implements MenuOptio
     public static final String MENU_CODE = "2";
     public static final Integer MENU_ORDER = 2;
 
-    private IProductUseCase useCase;
-    private View comeFrom;
+    private final IProductUseCase useCase;
+    private final View comeFrom;
 
     public ProductMenuView(IProductUseCase useCase, View comeFrom) {
         super(MENU_CODE, MENU_ORDER);

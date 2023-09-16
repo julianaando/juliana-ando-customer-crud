@@ -22,8 +22,20 @@ public class OrderFactory {
         );
     }
 
-    public static IOrderItemUseCase orderItemUseCase() {
-        return new OrderItemUseCaseImpl(
+    public static IOrderAddItemUseCase orderAddItemUseCase() {
+        return new OrderAddItemUseCaseImpl(
+                createRepository()
+        );
+    }
+
+    public static IOrderChangeItemUseCase orderChangeItemUseCase() {
+        return new OrderChangeItemUseCaseImpl(
+                createRepository()
+        );
+    }
+
+    public static IOrderRemoveItemUseCase orderRemoveItemUseCase() {
+        return new OrderRemoveItemUseCaseImpl(
                 createRepository()
         );
     }

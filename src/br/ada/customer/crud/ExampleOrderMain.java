@@ -16,7 +16,9 @@ public class ExampleOrderMain {
         IProductUseCase productUseCase = ProductFactory.createUseCase();
         ICustomerUseCase customerUseCase = CustomerFactory.createUseCase();
         ICreateOrderUseCase orderUseCase = OrderFactory.createUseCase();
-        IOrderItemUseCase orderItemUseCase = OrderFactory.orderItemUseCase();
+        IOrderAddItemUseCase orderAddItemUseCase = OrderFactory.orderAddItemUseCase();
+        IOrderChangeItemUseCase orderChangeItemUseCase = OrderFactory.orderChangeItemUseCase();
+        IOrderRemoveItemUseCase orderRemoveItemUseCase = OrderFactory.orderRemoveItemUseCase();
         IPlaceOrderUseCase orderPlaceUseCase = OrderFactory.placeOrderUseCase();
         IPayOrderUseCase orderPayUseCase = OrderFactory.payOrderUseCase();
         IShippingOrderUseCase orderShipping = OrderFactory.shippingUseCase();
@@ -38,10 +40,10 @@ public class ExampleOrderMain {
         productUseCase.create(productThree);
 
         Order order = orderUseCase.create(customer);
-        orderItemUseCase.addItem(order, productOne, BigDecimal.TEN, 1);
-        orderItemUseCase.addItem(order, productTwo, BigDecimal.TEN, 2);
-        orderItemUseCase.changeAmount(order, productTwo, 5);
-        orderItemUseCase.removeItem(order, productOne);
+        orderAddItemUseCase.addItem(order, productOne, BigDecimal.TEN, 1);
+        orderAddItemUseCase.addItem(order, productTwo, BigDecimal.TEN, 2);
+        orderChangeItemUseCase.changeAmount(order, productTwo, 5);
+        orderRemoveItemUseCase.removeItem(order, productOne);
         orderPlaceUseCase.placeOrder(order);
         orderPayUseCase.pay(order);
         orderShipping.shipping(order);
