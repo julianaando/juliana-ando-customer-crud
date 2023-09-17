@@ -3,12 +3,12 @@ package br.ada.customer.crud.view.order;
 import br.ada.customer.crud.view.component.menu.AbstractMenuOptionView;
 import br.ada.customer.crud.view.component.menu.MenuOptionView;
 
-public class CreateOrderMenuView extends AbstractMenuOptionView implements MenuOptionView {
+public class CreateOrderView extends AbstractMenuOptionView implements MenuOptionView {
 
     public static final String MENU_CODE = "1";
     public static final Integer MENU_ORDER = 1;
 
-    public CreateOrderMenuView() {
+    public CreateOrderView() {
         super(MENU_CODE, MENU_ORDER);
     }
 

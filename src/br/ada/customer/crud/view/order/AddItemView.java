@@ -3,12 +3,12 @@ package br.ada.customer.crud.view.order;
 import br.ada.customer.crud.view.component.menu.AbstractMenuOptionView;
 import br.ada.customer.crud.view.component.menu.MenuOptionView;
 
-public class AddItemMenuView extends AbstractMenuOptionView implements MenuOptionView {
+public class AddItemView extends AbstractMenuOptionView implements MenuOptionView {
 
     public static final String MENU_CODE = "2";
     public static final Integer MENU_ORDER = 2;
 
-    public AddItemMenuView() {
+    public AddItemView() {
         super(MENU_CODE, MENU_ORDER);
     }
 
@@ -19,7 +19,7 @@ public class AddItemMenuView extends AbstractMenuOptionView implements MenuOptio
 
     @Override
     public void selected() {
-        System.out.println("Foi selecionada a opção de adicionar um item ao pedido");
+
     }
 
 }

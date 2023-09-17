@@ -25,7 +25,7 @@ public class ProductMenuView extends AbstractMenuOptionView implements MenuOptio
 
     @Override
     public void render() {
-        System.out.println(MENU_CODE + " - Product");
+        System.out.println(MENU_CODE + " - Produto");
     }
 
     @Override

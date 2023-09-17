@@ -29,13 +29,13 @@ public class OrderMenuView extends AbstractMenuOptionView implements MenuOptionV
     public void selected() {
         SubMenuView subMenuView = new SubMenuView(
                 Arrays.asList(
-                        new CreateOrderMenuView(),
-                        new AddItemMenuView(),
-                        new ChangeItemMenuView(),
-                        new RemoveItemMenuView(),
-                        new PayOrderMenuView(),
-                        new PlaceOrderMenuView(),
-                        new ShippingOrderMenuView(),
+                        new CreateOrderView(),
+                        new AddItemView(),
+                        new ChangeItemView(),
+                        new RemoveItemView(),
+                        new PayOrderView(),
+                        new PlaceOrderView(),
+                        new ShippingOrderView(),
                         new GoBackOptionView(comeFrom)
                 )
         );

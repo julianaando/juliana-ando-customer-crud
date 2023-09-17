@@ -10,8 +10,8 @@ import java.util.List;
 
 public class CustomerUseCaseImpl implements ICustomerUseCase {
 
-    private CustomerRepository repository;
-    private INotifierUseCase<Customer> notifier;
+    private final CustomerRepository repository;
+    private final INotifierUseCase<Customer> notifier;
 
     public CustomerUseCaseImpl(CustomerRepository repository, INotifierUseCase<Customer> notifier) {
         this.repository = repository;
